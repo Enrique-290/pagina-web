@@ -37,6 +37,14 @@ export const template = `
       </table>
     </div>
   </section>
+
+  <section class="panel">
+    <div class="section-heading">
+      <span class="eyebrow">Pago en linea</span>
+      <h2>Cobro listo para Checkout Pro</h2>
+      <p>Los planes generan una preferencia de pago segura con regreso automatico al sitio cuando el pago se aprueba, queda pendiente o falla.</p>
+    </div>
+  </section>
 </section>
 `;
 
@@ -55,7 +63,13 @@ export function init(root, { data, notify }) {
           <p class="price-card__setup">${billing === "monthly" ? plan.setup : "Incluye configuracion y salida a produccion"}</p>
         </div>
         <ul>${plan.features.map((feature) => `<li>${feature}</li>`).join("")}</ul>
-        <button class="btn ${index === 1 ? "btn--secondary" : "btn--primary"}" data-action="mercadopago">${plan.cta}</button>
+        <button
+          class="btn ${index === 1 ? "btn--secondary" : "btn--primary"}"
+          data-action="mercadopago"
+          data-product-kind="plan"
+          data-product-id="${plan.id}"
+          data-billing="${billing}"
+        >${plan.cta}</button>
       </article>
     `).join("");
   };
@@ -74,5 +88,6 @@ export function init(root, { data, notify }) {
 
   billingButtons.forEach((button) => button.addEventListener("click", onBillingClick));
   renderPlans();
+
   return () => billingButtons.forEach((button) => button.removeEventListener("click", onBillingClick));
 }

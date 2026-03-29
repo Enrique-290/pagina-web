@@ -8,6 +8,14 @@ export const template = `
     </div>
     <div class="grid grid--3" id="apps-grid"></div>
   </section>
+
+  <section class="panel">
+    <div class="section-heading">
+      <span class="eyebrow">Checkout Pro</span>
+      <h2>Pagos seguros con Mercado Pago</h2>
+      <p>Las compras se generan desde backend para no exponer credenciales sensibles y facilitar la activacion posterior de licencias.</p>
+    </div>
+  </section>
 </section>
 `;
 
@@ -25,12 +33,19 @@ export function init(root, { data, notify }) {
         <span class="app-card__price">${app.price}</span>
       </div>
       <p class="card-copy">${app.description}</p>
+      <p class="muted">${app.requiresQuote ? "Cotizacion personalizada" : `Mensualidad ${formatMXN(app.checkout.monthly)} o instalacion ${formatMXN(app.checkout.setup)}`}</p>
       <ul>
         ${app.features.map((feature) => `<li>${feature}</li>`).join("")}
       </ul>
       <div class="btn-row">
         <button class="btn btn--primary" data-route="demo" data-message="Abriendo demo de ${app.name}">Ver demo</button>
-        <button class="btn btn--secondary" data-action="mercadopago">Comprar</button>
+        <button
+          class="btn btn--secondary"
+          data-action="mercadopago"
+          data-product-kind="app"
+          data-product-id="${app.id}"
+          data-billing="monthly"
+        >${app.requiresQuote ? "Cotizar" : "Comprar"}</button>
         <button class="btn btn--ghost" data-action="whatsapp">WhatsApp</button>
       </div>
     </article>
@@ -38,4 +53,8 @@ export function init(root, { data, notify }) {
 
   notify("Catalogo cargado con aplicaciones listas para venta.");
   return null;
+}
+
+function formatMXN(amount) {
+  return new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN" }).format(amount);
 }

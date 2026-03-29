@@ -1,15 +1,85 @@
 export const apps = [
-  { id: "gimnasio", name: "TPV Gimnasio", price: "Desde $599/mes", category: "Fitness", description: "Controla membresias, cobros recurrentes, acceso y seguimiento de clientes desde una sola interfaz.", features: ["Cobro de mensualidades", "Control de acceso", "Reportes de asistencia", "Alertas de vencimiento"] },
-  { id: "farmacia", name: "TPV Farmacia", price: "Desde $899/mes", category: "Retail salud", description: "Gestiona inventario por lote, ventas rapidas, recetas y puntos de reorden con precision operativa.", features: ["Inventario por caducidad", "Ticket y factura", "Corte de caja", "Control de proveedores"] },
-  { id: "tienda", name: "TPV Tienda", price: "Desde $699/mes", category: "Retail", description: "Vende, repone stock y analiza el desempeno de tu negocio con un panel simple y veloz.", features: ["Ventas omnicanal", "Escaner y tickets", "Promociones", "Panel de utilidad"] },
-  { id: "acceso", name: "Control de Acceso", price: "Desde $499/mes", category: "Seguridad", description: "Automatiza entradas, horarios y permisos para gimnasios, oficinas y espacios privados.", features: ["QR o PIN", "Bitacora en tiempo real", "Roles y permisos", "Alertas de seguridad"] },
-  { id: "custom", name: "Apps Personalizadas", price: "Proyecto a medida", category: "Custom SaaS", description: "Diseñamos soluciones digitales alineadas a tus procesos, ventas y operacion real.", features: ["Arquitectura a medida", "Integraciones API", "Dashboard ejecutivo", "Escalabilidad SaaS"] }
+  {
+    id: "gimnasio",
+    name: "TPV Gimnasio",
+    price: "Desde $599/mes",
+    category: "Fitness",
+    description: "Controla membresias, cobros recurrentes, acceso y seguimiento de clientes desde una sola interfaz.",
+    features: ["Cobro de mensualidades", "Control de acceso", "Reportes de asistencia", "Alertas de vencimiento"],
+    checkout: { monthly: 599, setup: 3900 }
+  },
+  {
+    id: "farmacia",
+    name: "TPV Farmacia",
+    price: "Desde $899/mes",
+    category: "Retail salud",
+    description: "Gestiona inventario por lote, ventas rapidas, recetas y puntos de reorden con precision operativa.",
+    features: ["Inventario por caducidad", "Ticket y factura", "Corte de caja", "Control de proveedores"],
+    checkout: { monthly: 899, setup: 5900 }
+  },
+  {
+    id: "tienda",
+    name: "TPV Tienda",
+    price: "Desde $699/mes",
+    category: "Retail",
+    description: "Vende, repone stock y analiza el desempeno de tu negocio con un panel simple y veloz.",
+    features: ["Ventas omnicanal", "Escaner y tickets", "Promociones", "Panel de utilidad"],
+    checkout: { monthly: 699, setup: 4900 }
+  },
+  {
+    id: "acceso",
+    name: "Control de Acceso",
+    price: "Desde $499/mes",
+    category: "Seguridad",
+    description: "Automatiza entradas, horarios y permisos para gimnasios, oficinas y espacios privados.",
+    features: ["QR o PIN", "Bitacora en tiempo real", "Roles y permisos", "Alertas de seguridad"],
+    checkout: { monthly: 499, setup: 2900 }
+  },
+  {
+    id: "custom",
+    name: "Apps Personalizadas",
+    price: "Proyecto a medida",
+    category: "Custom SaaS",
+    description: "Disenamos soluciones digitales alineadas a tus procesos, ventas y operacion real.",
+    features: ["Arquitectura a medida", "Integraciones API", "Dashboard ejecutivo", "Escalabilidad SaaS"],
+    requiresQuote: true
+  }
 ];
 
 export const plans = [
-  { name: "Basico", price: "$399", setup: "$2,900 unica instalacion", badge: "Para iniciar rapido", features: ["1 sucursal", "1 app incluida", "Capacitacion inicial", "Soporte por WhatsApp"], cta: "Comprar Basico" },
-  { name: "Pro", price: "$899", setup: "$5,900 unica instalacion", badge: "Mas vendido", features: ["Hasta 3 sucursales", "Integracion de pagos", "Reportes avanzados", "Soporte prioritario"], cta: "Comprar Pro" },
-  { name: "Premium", price: "$1,790", setup: "Implementacion personalizada", badge: "Escala completa", features: ["Sucursales ilimitadas", "App personalizada", "Dashboard dedicado", "Acompanamiento estrategico"], cta: "Hablar con ventas" }
+  {
+    id: "basico",
+    name: "Basico",
+    price: "$399",
+    setup: "$2,900 unica instalacion",
+    badge: "Para iniciar rapido",
+    features: ["1 sucursal", "1 app incluida", "Capacitacion inicial", "Soporte por WhatsApp"],
+    cta: "Comprar Basico",
+    monthlyAmount: 399,
+    setupAmount: 2900
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price: "$899",
+    setup: "$5,900 unica instalacion",
+    badge: "Mas vendido",
+    features: ["Hasta 3 sucursales", "Integracion de pagos", "Reportes avanzados", "Soporte prioritario"],
+    cta: "Comprar Pro",
+    monthlyAmount: 899,
+    setupAmount: 5900
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    price: "$1,790",
+    setup: "$11,900 implementacion completa",
+    badge: "Escala completa",
+    features: ["Sucursales ilimitadas", "App personalizada", "Dashboard dedicado", "Acompanamiento estrategico"],
+    cta: "Comprar Premium",
+    monthlyAmount: 1790,
+    setupAmount: 11900
+  }
 ];
 
 export const testimonials = [
