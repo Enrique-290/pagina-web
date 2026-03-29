@@ -1,0 +1,46 @@
+export const template = `
+<section class="module-view">
+  <section class="grid grid--2">
+    <article class="panel">
+      <div class="section-heading">
+        <span class="eyebrow">Acceso clientes</span>
+        <h1>Login para licencias y paneles</h1>
+        <p>Este acceso esta listo para conectar autenticacion, estado de suscripcion y permisos por cliente.</p>
+      </div>
+      <div class="feature-list">
+        <span class="tag">Firebase Auth</span>
+        <span class="tag">Licencias por usuario</span>
+        <span class="tag">Roles de acceso</span>
+      </div>
+    </article>
+
+    <article class="panel">
+      <form id="login-form" class="form-grid">
+        <div class="field">
+          <label for="user">Usuario</label>
+          <input id="user" name="user" type="text" placeholder="cliente@negocio.com">
+        </div>
+        <div class="field">
+          <label for="password">Contrasena</label>
+          <input id="password" name="password" type="password" placeholder="••••••••">
+        </div>
+        <button class="btn btn--primary" type="submit">Ingresar</button>
+        <button class="btn btn--ghost" type="button" data-action="firebase">Conectar Firebase</button>
+      </form>
+    </article>
+  </section>
+</section>
+`;
+
+export function init(root, { navigate, notify }) {
+  const form = root.querySelector("#login-form");
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    notify("Acceso simulado correcto. Entrando al dashboard del cliente.");
+    navigate("dashboard");
+  };
+
+  form?.addEventListener("submit", onSubmit);
+  return () => form?.removeEventListener("submit", onSubmit);
+}

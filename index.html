@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural Apps | Software para negocios</title>
+  <meta name="description" content="Neural Apps digitaliza negocios con sistemas TPV, apps personalizadas y una experiencia SaaS moderna.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" data-route="home" aria-label="Neural Apps inicio">
+        <span class="brand__mark">N</span>
+        <span>
+          <strong>Neural Apps</strong>
+          <small>Software para negocios</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="topnav">
+        <a href="#home" data-route="home">Inicio</a>
+        <a href="#apps" data-route="apps">Aplicaciones</a>
+        <a href="#demo" data-route="demo">Demo</a>
+        <a href="#pricing" data-route="pricing">Precios</a>
+        <a href="#clientes" data-route="clientes">Clientes</a>
+        <a href="#contacto" data-route="contacto">Contacto</a>
+        <a href="#login" data-route="login" class="topnav__ghost">Login</a>
+        <a href="#dashboard" data-route="dashboard" class="topnav__cta">Dashboard</a>
+      </nav>
+    </header>
+
+    <main id="app" class="app-frame" aria-live="polite"></main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

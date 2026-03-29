@@ -1,0 +1,14 @@
+.testimonial-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(243, 249, 255, 0.92));
+  border: 1px solid rgba(17, 34, 68, 0.08);
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  font-size: 1.03rem;
+  line-height: 1.7;
+}

@@ -1,0 +1,34 @@
+export const template = `
+<section class="module-view">
+  <section class="panel">
+    <div class="section-heading">
+      <span class="eyebrow">Clientes</span>
+      <h1>Negocios que ya operan con Neural Apps</h1>
+      <p>Mostramos traccion, confianza y casos de uso concretos para cerrar ventas con mas claridad.</p>
+    </div>
+    <div class="logo-list">
+      <span class="logo-pill">Fit Club MX</span>
+      <span class="logo-pill">Farmacia Nova</span>
+      <span class="logo-pill">Mini Market Uno</span>
+      <span class="logo-pill">Studio Access</span>
+    </div>
+  </section>
+
+  <section class="grid grid--3" id="testimonials-grid"></section>
+</section>
+`;
+
+export function init(root, { data }) {
+  const grid = root.querySelector("#testimonials-grid");
+  grid.innerHTML = data.testimonials.map((item) => `
+    <article class="testimonial-card panel">
+      <span class="pill">${item.sector}</span>
+      <blockquote>"${item.quote}"</blockquote>
+      <div>
+        <h2 class="card-title">${item.name}</h2>
+        <p class="muted">${item.impact}</p>
+      </div>
+    </article>
+  `).join("");
+  return null;
+}

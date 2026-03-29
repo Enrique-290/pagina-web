@@ -1,0 +1,28 @@
+.pricing-toggle {
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(239, 250, 247, 0.92));
+  border: 1px solid rgba(17, 34, 68, 0.08);
+  position: relative;
+}
+
+.pricing-card--highlight {
+  outline: 2px solid rgba(16, 185, 129, 0.22);
+  transform: translateY(-8px);
+}
+
+.price-card__value {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.price-card__setup { color: var(--muted); }
+.pricing-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
